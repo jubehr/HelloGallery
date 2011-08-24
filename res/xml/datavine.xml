@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vines>
+        <vine
+        	img="chateau_canon"
+        	design="Chateau Giscours"
+        	prix="45€" />
+        <vine
+        	img="chateau_galland"
+        	design="Chateau Cheval Blanc"
+        	prix="134€" />
+        <vine
+        	img="chateau_canon"
+        	design="Chateau Petrus"
+        	prix="456€" />
+        <vine
+        	img="chateau_galland"
+        	design="Romanée Conti"
+        	prix="578€" />
+        <vine
+        	img="chateau_canon"
+        	design="Clos de Vougeot"
+        	prix="145€" />
+        <vine
+        	img="chateau_galland"
+        	design="Chateau Yquem"
+        	prix="192€" />
+        
+</vines>

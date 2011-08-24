@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+ 
+ 	<ScrollView
+     android:id="@+id/ScrollViewAllVines"
+     android:layout_width="600px"
+     android:layout_height="fill_parent"
+     android:scrollbars="vertical"
+     android:background="@drawable/bk_cuir_600x800">
+     	<TableLayout
+         android:id="@+id/TableLayout_AllVines"
+         android:layout_width="fill_parent"
+         android:layout_height="fill_parent"
+         android:stretchColumns="*">
+        </TableLayout>
+     </ScrollView>
+   
+
+    <LinearLayout 
+    android:layout_width="600px" 
+    android:layout_height="fill_parent" 
+    android:background="@drawable/bk_cuir_600x800" 
+    android:orientation="vertical">
+        <TextView 
+          android:layout_width="fill_parent" 
+          android:layout_height="fill_parent" 
+          android:textSize="15pt" 
+          android:layout_weight="1" 
+          android:text="Critère 1">
+        </TextView>
+        <TextView 
+         android:layout_width="fill_parent" 
+         android:layout_height="fill_parent" 
+         android:textSize="15pt" 
+         android:layout_weight="1" 
+         android:text="Critère 3">
+        </TextView>
+    </LinearLayout>
+        
+</LinearLayout>
+        
