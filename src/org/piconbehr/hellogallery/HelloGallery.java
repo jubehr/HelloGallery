@@ -6,8 +6,11 @@ import org.xmlpull.v1.XmlPullParserException;
 
 import android.app.Activity;
 import android.content.res.XmlResourceParser;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
+import android.view.ViewGroup.LayoutParams;
 import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
 import android.widget.TableLayout;
@@ -101,29 +104,35 @@ if (bFoundVines == false) {
 	        final TableRow newRow = new TableRow(this);
 	        int textColor = getResources().getColor(R.color.title_color);
 	        float textSize = getResources().getDimension(R.dimen.help_text_size);
-	        addImgToRowWithValues(newRow, vineImg, 8);
-	        addTextToRowWithValues(newRow, vineDesc, textColor, textSize);
-	       
-	        addTextToRowWithValues(newRow, vinePrice, textColor, textSize);
+	        String textFont = getResources().getString(R.string.font_cuir_default);
+	        
+	        addImgToRowWithValues(newRow, vineImg, 80);
+	        addTextToRowWithValues(newRow, vineDesc, textFont, textColor, textSize);
+	        addTextToRowWithValues(newRow, vinePrice, textFont, textColor, textSize);
+	        newRow.setPadding(2, 2, 2, 2);
+	        
 	        vineTable.addView(newRow);
 	    }
 	 
-	 private void addTextToRowWithValues(final TableRow tableRow, String text, int textColor, float textSize) {
+	 private void addTextToRowWithValues(final TableRow tableRow, String text, String font, int textColor, float textSize) {
 	        TextView textView = new TextView(this);
 	        textView.setTextSize(textSize);
 	        textView.setTextColor(textColor);
+	        textView.setTypeface(Typeface.create(font,Typeface.NORMAL));
+	        textView.setGravity(Gravity.CENTER_VERTICAL);
 	        textView.setText(text);
 	        tableRow.addView(textView);
 	    }
 	 
 	 private void addImgToRowWithValues(final TableRow tableRow, String res, int imgSize) {
 	        ImageView imgView = new ImageView(this);
+	        
+	        imgView.setImageResource(getResources().getIdentifier(res,"drawable","org.piconbehr.hellogallery"));
 	        imgView.setAdjustViewBounds(true);
-	        imgView.setScaleType(ScaleType.CENTER);
-	        imgView.setMaxHeight(30);
-	        imgView.setMaxWidth(30);
-	        //imgView.setAlpha(10);
-	        imgView.setBackgroundResource(getResources().getIdentifier(res,"drawable","org.piconbehr.hellogallery"));
+	        imgView.setMaxHeight(imgSize);
+	        imgView.setMaxWidth(imgSize);
+	        
+	        
 	        tableRow.addView(imgView);
 	    }
 }

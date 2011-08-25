@@ -32,15 +32,17 @@ public final class R {
         public static final int bk_cuir_600x800=0x7f020000;
         public static final int chateau_canon=0x7f020001;
         public static final int chateau_galand=0x7f020002;
-        public static final int icon=0x7f020003;
-        public static final int sample_0=0x7f020004;
-        public static final int sample_1=0x7f020005;
-        public static final int sample_2=0x7f020006;
-        public static final int sample_3=0x7f020007;
-        public static final int sample_4=0x7f020008;
-        public static final int sample_5=0x7f020009;
-        public static final int sample_6=0x7f02000a;
-        public static final int sample_7=0x7f02000b;
+        public static final int etiquette_canon=0x7f020003;
+        public static final int etiquette_galand=0x7f020004;
+        public static final int icon=0x7f020005;
+        public static final int sample_0=0x7f020006;
+        public static final int sample_1=0x7f020007;
+        public static final int sample_2=0x7f020008;
+        public static final int sample_3=0x7f020009;
+        public static final int sample_4=0x7f02000a;
+        public static final int sample_5=0x7f02000b;
+        public static final int sample_6=0x7f02000c;
+        public static final int sample_7=0x7f02000d;
     }
     public static final class id {
         public static final int ScrollViewAllVines=0x7f080000;
@@ -51,8 +53,9 @@ public final class R {
     }
     public static final class string {
         public static final int app_name=0x7f070001;
+        public static final int font_cuir_default=0x7f070002;
         public static final int hello=0x7f070000;
-        public static final int no_vines=0x7f070002;
+        public static final int no_vines=0x7f070003;
     }
     public static final class xml {
         public static final int datavine=0x7f040000;
