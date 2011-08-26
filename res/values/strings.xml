@@ -3,7 +3,7 @@
     <string name="hello">Hello World, HelloGallery!</string>
     <string name="app_name">Vine Catalog</string>
     
-    <string name="font_cuir_default">zapfino</string>
+    <string name="font_cuir_default">Zapfino</string>
     
     <string name="no_vines">Pas de vins trouvés</string>
     

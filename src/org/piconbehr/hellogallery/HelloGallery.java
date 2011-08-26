@@ -104,8 +104,8 @@ if (bFoundVines == false) {
 	        final TableRow newRow = new TableRow(this);
 	        int textColor = getResources().getColor(R.color.title_color);
 	        float textSize = getResources().getDimension(R.dimen.help_text_size);
-	        String textFont = getResources().getString(R.string.font_cuir_default);
-	        
+	        // textFont = getResources().getString(R.string.font_cuir_default);
+	        Typeface textFont = Typeface.createFromAsset(getAssets(), "fonts/Mistral.ttf");
 	        addImgToRowWithValues(newRow, vineImg, 80);
 	        addTextToRowWithValues(newRow, vineDesc, textFont, textColor, textSize);
 	        addTextToRowWithValues(newRow, vinePrice, textFont, textColor, textSize);
@@ -114,11 +114,11 @@ if (bFoundVines == false) {
 	        vineTable.addView(newRow);
 	    }
 	 
-	 private void addTextToRowWithValues(final TableRow tableRow, String text, String font, int textColor, float textSize) {
+	 private void addTextToRowWithValues(final TableRow tableRow, String text,Typeface font, int textColor, float textSize) {
 	        TextView textView = new TextView(this);
 	        textView.setTextSize(textSize);
 	        textView.setTextColor(textColor);
-	        textView.setTypeface(Typeface.create(font,Typeface.NORMAL));
+	        textView.setTypeface(font);
 	        textView.setGravity(Gravity.CENTER_VERTICAL);
 	        textView.setText(text);
 	        tableRow.addView(textView);
