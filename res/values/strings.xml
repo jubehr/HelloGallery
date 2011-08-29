@@ -7,4 +7,11 @@
     
     <string name="no_vines">Pas de vins trouvés</string>
     
+    <string name="label_volume">Volume</string>
+    <string name="label_robe">Robe</string>
+    <string name="label_accord">Accord</string>
+    <string name="label_prix">Prix</string>
+    
+    
+    
 </resources>

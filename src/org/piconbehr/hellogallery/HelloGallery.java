@@ -10,9 +10,7 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
-import android.view.ViewGroup.LayoutParams;
 import android.widget.ImageView;
-import android.widget.ImageView.ScaleType;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -22,6 +20,10 @@ import android.widget.TextView;
 public class HelloGallery extends Activity {
     private static final String DEBUG_TAG = null;
 
+    private Typeface textFont; 
+    private int textColor;
+    private float textSize;
+    
 	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -47,6 +49,12 @@ public class HelloGallery extends Activity {
 	            Toast.makeText(HelloGallery.this, "" + position, Toast.LENGTH_SHORT).show();
 	        }
 	    });*/
+	    try {
+	    	textFont = Typeface.createFromAsset(getAssets(), "fonts/Zapfino.ttf");
+	    }
+	    catch (Exception e) {
+            Log.e(DEBUG_TAG, "Failed to load font", e);
+        }
 	    
 	    try {
 	    //Lecture de la liste des vins dans le XML
@@ -57,6 +65,8 @@ public class HelloGallery extends Activity {
           
           
               processVines(allVinesTable, vines);
+              fillRightSide();
+              
           } catch (Exception e) {
               Log.e(DEBUG_TAG, "Failed to load vines", e);
           }
@@ -102,23 +112,21 @@ if (bFoundVines == false) {
 }
 	 private void insertVineRow(final TableLayout vineTable, String vineImg, String vineDesc, String vinePrice) {
 	        final TableRow newRow = new TableRow(this);
-	        int textColor = getResources().getColor(R.color.title_color);
-	        float textSize = getResources().getDimension(R.dimen.help_text_size);
-	        // textFont = getResources().getString(R.string.font_cuir_default);
-	        Typeface textFont = Typeface.createFromAsset(getAssets(), "fonts/Mistral.ttf");
+	        textColor = getResources().getColor(R.color.title_color);
+	        textSize = getResources().getDimension(R.dimen.help_text_size);
 	        addImgToRowWithValues(newRow, vineImg, 80);
-	        addTextToRowWithValues(newRow, vineDesc, textFont, textColor, textSize);
-	        addTextToRowWithValues(newRow, vinePrice, textFont, textColor, textSize);
+	        addTextToRowWithValues(newRow, vineDesc,  textColor, textSize);
+	        addTextToRowWithValues(newRow, vinePrice,  textColor, textSize);
 	        newRow.setPadding(2, 2, 2, 2);
 	        
 	        vineTable.addView(newRow);
 	    }
 	 
-	 private void addTextToRowWithValues(final TableRow tableRow, String text,Typeface font, int textColor, float textSize) {
+	 private void addTextToRowWithValues(final TableRow tableRow, String text, int textColor, float textSize) {
 	        TextView textView = new TextView(this);
 	        textView.setTextSize(textSize);
 	        textView.setTextColor(textColor);
-	        textView.setTypeface(font);
+	        textView.setTypeface(textFont);
 	        textView.setGravity(Gravity.CENTER_VERTICAL);
 	        textView.setText(text);
 	        tableRow.addView(textView);
@@ -134,5 +142,46 @@ if (bFoundVines == false) {
 	        
 	        
 	        tableRow.addView(imgView);
+	    }
+	 
+	 private void fillRightSide() {
+		 
+		 //Set labels
+		 textColor = getResources().getColor(R.color.title_color);
+	     textSize = getResources().getDimension(R.dimen.help_text_size);
+	     TextView tvVolume = (TextView) findViewById(R.id.label_volume);
+	     formatText(tvVolume, getResources().getString(R.string.label_volume));
+	     TextView tvRobe = (TextView) findViewById(R.id.label_robe);
+	     formatText(tvRobe, getResources().getString(R.string.label_robe));
+	     TextView tvAccord = (TextView) findViewById(R.id.label_accord);
+	     formatText(tvAccord, getResources().getString(R.string.label_accord));
+	     TextView tvPrix = (TextView) findViewById(R.id.label_prix);
+	     formatText(tvPrix, getResources().getString(R.string.label_prix));
+	     
+	     //Set criterias
+	     //for Volume
+	     insertCriteriaRow((TableLayout) findViewById(R.id.TableLayout_Volume),"verre", 60);
+	     insertCriteriaRow((TableLayout) findViewById(R.id.TableLayout_Volume),"pot", 60);
+	     insertCriteriaRow((TableLayout) findViewById(R.id.TableLayout_Volume),"bouteille", 60);
+	     insertCriteriaRow((TableLayout) findViewById(R.id.TableLayout_Volume),"magnum", 60);
+	     
+	 }
+	 
+	 private void formatText(final TextView textView, String text) {
+		 	
+	        textView.setTextSize(textSize);
+	        textView.setTextColor(textColor);
+	        textView.setTypeface(textFont);
+	        textView.setGravity(Gravity.CENTER_VERTICAL);
+	        textView.setText(text);
+	    }
+	 
+	 private void insertCriteriaRow(final TableLayout critTable, String critImg, int critSize) {
+	        final TableRow newRow = new TableRow(this);
+	        addImgToRowWithValues(newRow, critImg, critSize);
+	        newRow.setPadding(2, 2, 2, 2);
+	        newRow.setOrientation(1); //vertical
+	        
+	        critTable.addView(newRow);	
 	    }
 }

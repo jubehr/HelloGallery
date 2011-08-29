@@ -24,5 +24,21 @@
         	img="etiquette_galand"
         	design="Chateau Yquem"
         	prix="192€" />
+        <vine
+        	img="etiquette_canon"
+        	design="Chateau Cheval Blanc"
+        	prix="233€" />
+        <vine
+        	img="etiquette_galand"
+        	design="Clos de la Balme"
+        	prix="18€" />
+        <vine
+        	img="etiquette_galand"
+        	design="Moulin des Tuiles"
+        	prix="27€" />
+        <vine
+        	img="etiquette_canon"
+        	design="Mas de Beauregard"
+        	prix="39€" />
         
 </vines>

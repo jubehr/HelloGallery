@@ -26,19 +26,61 @@
     android:background="@drawable/bk_cuir_600x800" 
     android:orientation="vertical">
         <TextView 
+          android:id="@+id/label_volume"
           android:layout_width="fill_parent" 
           android:layout_height="fill_parent" 
-          android:textSize="15pt" 
-          android:layout_weight="1" 
-          android:text="Critère 1">
+          android:textSize="12pt" 
+          android:layout_weight="1" >
         </TextView>
+        <TableLayout
+         android:id="@+id/TableLayout_Volume"
+         android:layout_width="fill_parent"
+         android:layout_height="fill_parent"
+         android:stretchColumns="*"
+         android:orientation="vertical">
+         </TableLayout>
         <TextView 
-         android:layout_width="fill_parent" 
-         android:layout_height="fill_parent" 
-         android:textSize="15pt" 
-         android:layout_weight="1" 
-         android:text="Critère 3">
+          android:id="@+id/label_robe"
+          android:layout_width="fill_parent" 
+          android:layout_height="fill_parent" 
+          android:textSize="12pt" 
+          android:layout_weight="1" >
         </TextView>
+        <TableLayout
+         android:id="@+id/TableLayout_Robe"
+         android:layout_width="fill_parent"
+         android:layout_height="fill_parent"
+         android:stretchColumns="*"
+         android:orientation="vertical">
+         </TableLayout>
+        <TextView 
+          android:id="@+id/label_accord"
+          android:layout_width="fill_parent" 
+          android:layout_height="fill_parent" 
+          android:textSize="12pt" 
+          android:layout_weight="1" >
+        </TextView>
+        <TableLayout
+         android:id="@+id/TableLayout_Accord"
+         android:layout_width="fill_parent"
+         android:layout_height="fill_parent"
+         android:stretchColumns="*"
+         android:orientation="vertical">
+         </TableLayout>
+        <TextView 
+          android:id="@+id/label_prix"
+          android:layout_width="fill_parent" 
+          android:layout_height="fill_parent" 
+          android:textSize="12pt" 
+          android:layout_weight="1" >
+        </TextView>
+        <TableLayout
+         android:id="@+id/TableLayout_Prix"
+         android:layout_width="fill_parent"
+         android:layout_height="fill_parent"
+         android:stretchColumns="*"
+         android:orientation="vertical">
+         </TableLayout>
     </LinearLayout>
         
 </LinearLayout>

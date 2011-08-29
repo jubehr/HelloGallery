@@ -30,23 +30,42 @@ public final class R {
     }
     public static final class drawable {
         public static final int bk_cuir_600x800=0x7f020000;
-        public static final int chateau_canon=0x7f020001;
-        public static final int chateau_galand=0x7f020002;
-        public static final int etiquette_canon=0x7f020003;
-        public static final int etiquette_galand=0x7f020004;
-        public static final int icon=0x7f020005;
-        public static final int sample_0=0x7f020006;
-        public static final int sample_1=0x7f020007;
-        public static final int sample_2=0x7f020008;
-        public static final int sample_3=0x7f020009;
-        public static final int sample_4=0x7f02000a;
-        public static final int sample_5=0x7f02000b;
-        public static final int sample_6=0x7f02000c;
-        public static final int sample_7=0x7f02000d;
+        public static final int bouteille=0x7f020001;
+        public static final int chateau_canon=0x7f020002;
+        public static final int chateau_galand=0x7f020003;
+        public static final int etiquette_canon=0x7f020004;
+        public static final int etiquette_galand=0x7f020005;
+        public static final int icon=0x7f020006;
+        public static final int magnum=0x7f020007;
+        public static final int pot=0x7f020008;
+        public static final int prix_high=0x7f020009;
+        public static final int prix_medium=0x7f02000a;
+        public static final int prix_small=0x7f02000b;
+        public static final int sample_0=0x7f02000c;
+        public static final int sample_1=0x7f02000d;
+        public static final int sample_2=0x7f02000e;
+        public static final int sample_3=0x7f02000f;
+        public static final int sample_4=0x7f020010;
+        public static final int sample_5=0x7f020011;
+        public static final int sample_6=0x7f020012;
+        public static final int sample_7=0x7f020013;
+        public static final int verre=0x7f020014;
+        public static final int vin_blanc=0x7f020015;
+        public static final int vin_liquoreux=0x7f020016;
+        public static final int vin_rose=0x7f020017;
+        public static final int vin_rouge=0x7f020018;
     }
     public static final class id {
         public static final int ScrollViewAllVines=0x7f080000;
+        public static final int TableLayout_Accord=0x7f080007;
         public static final int TableLayout_AllVines=0x7f080001;
+        public static final int TableLayout_Prix=0x7f080009;
+        public static final int TableLayout_Robe=0x7f080005;
+        public static final int TableLayout_Volume=0x7f080003;
+        public static final int label_accord=0x7f080006;
+        public static final int label_prix=0x7f080008;
+        public static final int label_robe=0x7f080004;
+        public static final int label_volume=0x7f080002;
     }
     public static final class layout {
         public static final int main=0x7f030000;
@@ -55,6 +74,10 @@ public final class R {
         public static final int app_name=0x7f070001;
         public static final int font_cuir_default=0x7f070002;
         public static final int hello=0x7f070000;
+        public static final int label_accord=0x7f070006;
+        public static final int label_prix=0x7f070007;
+        public static final int label_robe=0x7f070005;
+        public static final int label_volume=0x7f070004;
         public static final int no_vines=0x7f070003;
     }
     public static final class xml {
