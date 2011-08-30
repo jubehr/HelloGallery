@@ -56,15 +56,19 @@ public final class R {
         public static final int vin_rouge=0x7f020018;
     }
     public static final class id {
+        public static final int ScrollViewAllAccord=0x7f080009;
+        public static final int ScrollViewAllPrix=0x7f08000c;
+        public static final int ScrollViewAllRobes=0x7f080006;
         public static final int ScrollViewAllVines=0x7f080000;
-        public static final int TableLayout_Accord=0x7f080007;
+        public static final int ScrollViewAllVolumes=0x7f080003;
+        public static final int TableLayout_Accord=0x7f08000a;
         public static final int TableLayout_AllVines=0x7f080001;
-        public static final int TableLayout_Prix=0x7f080009;
-        public static final int TableLayout_Robe=0x7f080005;
-        public static final int TableLayout_Volume=0x7f080003;
-        public static final int label_accord=0x7f080006;
-        public static final int label_prix=0x7f080008;
-        public static final int label_robe=0x7f080004;
+        public static final int TableLayout_Prix=0x7f08000d;
+        public static final int TableLayout_Robe=0x7f080007;
+        public static final int TableLayout_Volume=0x7f080004;
+        public static final int label_accord=0x7f080008;
+        public static final int label_prix=0x7f08000b;
+        public static final int label_robe=0x7f080005;
         public static final int label_volume=0x7f080002;
     }
     public static final class layout {

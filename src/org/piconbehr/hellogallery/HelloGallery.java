@@ -10,7 +10,10 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -23,13 +26,21 @@ public class HelloGallery extends Activity {
     private Typeface textFont; 
     private int textColor;
     private float textSize;
+    private int maxHeightCriteria;
     
 	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 	    super.onCreate(savedInstanceState);
+	    
+	    final Window win = getWindow();
+	    win.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);    
+	    requestWindowFeature(Window.FEATURE_NO_TITLE);
+	    
 	    setContentView(R.layout.main);
 
+	    
+	    
 	   /* GridView gridview = (GridView) findViewById(R.id.gridview);
         gridview.setAdapter(new ImageAdapterGrid(this));
         
@@ -146,6 +157,9 @@ if (bFoundVines == false) {
 	 
 	 private void fillRightSide() {
 		 
+		 //Initialize parameters
+		 maxHeightCriteria = 100;
+		 
 		 //Set labels
 		 textColor = getResources().getColor(R.color.title_color);
 	     textSize = getResources().getDimension(R.dimen.help_text_size);
@@ -158,13 +172,24 @@ if (bFoundVines == false) {
 	     TextView tvPrix = (TextView) findViewById(R.id.label_prix);
 	     formatText(tvPrix, getResources().getString(R.string.label_prix));
 	     
+	     
 	     //Set criterias
 	     //for Volume
-	     insertCriteriaRow((TableLayout) findViewById(R.id.TableLayout_Volume),"verre", 60);
-	     insertCriteriaRow((TableLayout) findViewById(R.id.TableLayout_Volume),"pot", 60);
-	     insertCriteriaRow((TableLayout) findViewById(R.id.TableLayout_Volume),"bouteille", 60);
-	     insertCriteriaRow((TableLayout) findViewById(R.id.TableLayout_Volume),"magnum", 60);
+	     insertCriteriaRow((LinearLayout) findViewById(R.id.TableLayout_Volume),"verre", 60);
+	     insertCriteriaRow((LinearLayout) findViewById(R.id.TableLayout_Volume),"pot", 60);
+	     insertCriteriaRow((LinearLayout) findViewById(R.id.TableLayout_Volume),"bouteille", 60);
+	     insertCriteriaRow((LinearLayout) findViewById(R.id.TableLayout_Volume),"magnum", 60);
 	     
+	     //for Robe
+	     insertCriteriaRow((LinearLayout) findViewById(R.id.TableLayout_Robe),"vin_blanc", 60);
+	     insertCriteriaRow((LinearLayout) findViewById(R.id.TableLayout_Robe),"vin_liquoreux", 60);
+	     insertCriteriaRow((LinearLayout) findViewById(R.id.TableLayout_Robe),"vin_rose", 60);
+	     insertCriteriaRow((LinearLayout) findViewById(R.id.TableLayout_Robe),"vin_rouge", 60);
+	     
+	     //for Prix
+	     insertCriteriaRow((LinearLayout) findViewById(R.id.TableLayout_Prix),"prix_small", 60);
+	     insertCriteriaRow((LinearLayout) findViewById(R.id.TableLayout_Prix),"prix_medium", 60);
+	     insertCriteriaRow((LinearLayout) findViewById(R.id.TableLayout_Prix),"prix_high", 60);
 	 }
 	 
 	 private void formatText(final TextView textView, String text) {
@@ -176,12 +201,17 @@ if (bFoundVines == false) {
 	        textView.setText(text);
 	    }
 	 
-	 private void insertCriteriaRow(final TableLayout critTable, String critImg, int critSize) {
-	        final TableRow newRow = new TableRow(this);
-	        addImgToRowWithValues(newRow, critImg, critSize);
-	        newRow.setPadding(2, 2, 2, 2);
-	        newRow.setOrientation(1); //vertical
+	 private void insertCriteriaRow(final LinearLayout critTable, String critImg, int critSize) {
+		 	ImageView imgView = new ImageView(this);
 	        
-	        critTable.addView(newRow);	
+	        imgView.setImageResource(getResources().getIdentifier(critImg,"drawable","org.piconbehr.hellogallery"));
+	        imgView.setAdjustViewBounds(true);
+	        imgView.setClickable(true);
+	        imgView.setMinimumWidth(critSize);
+	        imgView.setMaxHeight(maxHeightCriteria);
+	        imgView.setMaxWidth(critSize);
+	        imgView.setPadding(20, 2, 20, 2);
+	        
+	        critTable.addView(imgView);
 	    }
 }

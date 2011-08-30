@@ -28,59 +28,95 @@
         <TextView 
           android:id="@+id/label_volume"
           android:layout_width="fill_parent" 
-          android:layout_height="fill_parent" 
+          android:layout_height="20px" 
           android:textSize="12pt" 
           android:layout_weight="1" >
         </TextView>
-        <TableLayout
-         android:id="@+id/TableLayout_Volume"
-         android:layout_width="fill_parent"
-         android:layout_height="fill_parent"
-         android:stretchColumns="*"
-         android:orientation="vertical">
-         </TableLayout>
+        <ScrollView
+     android:id="@+id/ScrollViewAllVolumes"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:scrollbars="horizontal">
+        	<LinearLayout
+        	 android:id="@+id/TableLayout_Volume"
+        	 android:layout_width="600px"
+         	android:layout_height="120px"
+         	android:stretchColumns="*"
+         	android:orientation="horizontal"
+         	android:gravity="fill">
+         	</LinearLayout>
+         </ScrollView>	
+        
+        
         <TextView 
           android:id="@+id/label_robe"
           android:layout_width="fill_parent" 
-          android:layout_height="fill_parent" 
+          android:layout_height="20px" 
           android:textSize="12pt" 
           android:layout_weight="1" >
         </TextView>
-        <TableLayout
+        
+        <ScrollView
+     android:id="@+id/ScrollViewAllRobes"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:scrollbars="horizontal">
+        <LinearLayout
          android:id="@+id/TableLayout_Robe"
-         android:layout_width="fill_parent"
-         android:layout_height="fill_parent"
+         android:layout_width="600px"
+         android:layout_height="120px"
          android:stretchColumns="*"
-         android:orientation="vertical">
-         </TableLayout>
+         android:orientation="horizontal"
+         android:gravity="fill">
+         </LinearLayout>
+         </ScrollView>
+         
         <TextView 
           android:id="@+id/label_accord"
           android:layout_width="fill_parent" 
-          android:layout_height="fill_parent" 
+          android:layout_height="20px" 
           android:textSize="12pt" 
           android:layout_weight="1" >
         </TextView>
-        <TableLayout
+        <ScrollView
+     android:id="@+id/ScrollViewAllAccord"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:scrollbars="horizontal">
+        <LinearLayout
          android:id="@+id/TableLayout_Accord"
-         android:layout_width="fill_parent"
-         android:layout_height="fill_parent"
+         android:layout_width="600px"
+         android:layout_height="120px"
          android:stretchColumns="*"
-         android:orientation="vertical">
-         </TableLayout>
+         android:orientation="horizontal"
+         android:gravity="fill">
+         </LinearLayout>
+         </ScrollView>
+        
+        
         <TextView 
           android:id="@+id/label_prix"
           android:layout_width="fill_parent" 
-          android:layout_height="fill_parent" 
+          android:layout_height="20px" 
           android:textSize="12pt" 
-          android:layout_weight="1" >
+          android:layout_weight="1" 
+          android:text="Prix">
         </TextView>
-        <TableLayout
+        
+        <ScrollView
+     android:id="@+id/ScrollViewAllPrix"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:scrollbars="horizontal">
+        <LinearLayout
          android:id="@+id/TableLayout_Prix"
-         android:layout_width="fill_parent"
-         android:layout_height="fill_parent"
+         android:layout_width="600px"
+         android:layout_height="120px"
          android:stretchColumns="*"
-         android:orientation="vertical">
-         </TableLayout>
+         android:orientation="horizontal"
+         android:gravity="fill">
+         </LinearLayout>
+         </ScrollView>
     </LinearLayout>
         
 </LinearLayout>
